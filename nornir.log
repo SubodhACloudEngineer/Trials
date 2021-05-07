@@ -1,0 +1,205 @@
+2020-04-10 13:41:36,997 -  nornir.core -     INFO -        run() - Running task 'get_facts' with args {'t': Progress:   0%|                                                                                                                                                                                                   | 0/1 [00:00<?, ?it/s], 'getter': 'get_facts'} on 1 hosts
+2020-04-10 13:41:38,933 - nornir.core.task -    ERROR -      start() - Host 'ussclpdnwsaac37': task 'Gathering the following facts: get_facts' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/napalm/eos/eos.py", line 164, in open
+    self.device.run_commands(["show clock"], encoding="text")
+  File "/usr/local/lib/python3.6/site-packages/pyeapi/client.py", line 743, in run_commands
+    response = self._connection.execute(commands, encoding, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/pyeapi/eapilib.py", line 550, in execute
+    response = self.send(request)
+  File "/usr/local/lib/python3.6/site-packages/pyeapi/eapilib.py", line 451, in send
+    response_content))
+pyeapi.eapilib.ConnectionError: Unauthorized. b'Unable to authenticate user: Bad username/password combination'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.6/site-packages/nornir/plugins/tasks/networking/napalm_get.py", line 49, in napalm_get
+    device = task.host.get_connection("napalm", task.nornir.config)
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 302, in get_connection
+    extras=conn.extras,
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 352, in open_connection
+    configuration=configuration,
+  File "/usr/local/lib/python3.6/site-packages/nornir/plugins/connections/napalm.py", line 51, in open
+    connection.open()
+  File "/usr/local/lib/python3.6/site-packages/napalm/eos/eos.py", line 169, in open
+    raise ConnectionException(py23_compat.text_type(ce))
+napalm.base.exceptions.ConnectionException: Unauthorized. b'Unable to authenticate user: Bad username/password combination'
+
+2020-04-10 13:41:38,939 - nornir.core.task -    ERROR -      start() - Host 'ussclpdnwsaac37': task 'get_facts' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "gather_facts.py", line 46, in get_facts
+    name=f"Gathering the following facts: {getter}", task=napalm_get, getters=getter
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function napalm_get at 0x7f882fb1a378> (failed)
+
+
+2020-04-10 13:44:08,862 -  nornir.core -     INFO -        run() - Running task 'get_facts' with args {'t': Progress:   0%|                                                                                                                                                                                                   | 0/1 [00:00<?, ?it/s], 'getter': 'get_facts'} on 1 hosts
+2020-04-10 13:44:10,802 - nornir.core.task -    ERROR -      start() - Host 'ussclpdnwsaac37': task 'Gathering the following facts: get_facts' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/napalm/eos/eos.py", line 164, in open
+    self.device.run_commands(["show clock"], encoding="text")
+  File "/usr/local/lib/python3.6/site-packages/pyeapi/client.py", line 743, in run_commands
+    response = self._connection.execute(commands, encoding, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/pyeapi/eapilib.py", line 550, in execute
+    response = self.send(request)
+  File "/usr/local/lib/python3.6/site-packages/pyeapi/eapilib.py", line 451, in send
+    response_content))
+pyeapi.eapilib.ConnectionError: Unauthorized. b'Unable to authenticate user: Bad username/password combination'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.6/site-packages/nornir/plugins/tasks/networking/napalm_get.py", line 49, in napalm_get
+    device = task.host.get_connection("napalm", task.nornir.config)
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 302, in get_connection
+    extras=conn.extras,
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 352, in open_connection
+    configuration=configuration,
+  File "/usr/local/lib/python3.6/site-packages/nornir/plugins/connections/napalm.py", line 51, in open
+    connection.open()
+  File "/usr/local/lib/python3.6/site-packages/napalm/eos/eos.py", line 169, in open
+    raise ConnectionException(py23_compat.text_type(ce))
+napalm.base.exceptions.ConnectionException: Unauthorized. b'Unable to authenticate user: Bad username/password combination'
+
+2020-04-10 13:44:10,808 - nornir.core.task -    ERROR -      start() - Host 'ussclpdnwsaac37': task 'get_facts' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "gather_facts.py", line 46, in get_facts
+    name=f"Gathering the following facts: {getter}", task=napalm_get, getters=getter
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function napalm_get at 0x7f6e14a90378> (failed)
+
+
+2020-04-10 13:47:05,684 -  nornir.core -     INFO -        run() - Running task 'get_facts' with args {'t': Progress:   0%|                                                                                                                                                                                                   | 0/1 [00:00<?, ?it/s], 'getter': 'get_facts'} on 1 hosts
+2020-04-10 13:47:07,635 - nornir.core.task -    ERROR -      start() - Host 'ussclpdnwsaac37': task 'Gathering the following facts: get_facts' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/napalm/eos/eos.py", line 164, in open
+    self.device.run_commands(["show clock"], encoding="text")
+  File "/usr/local/lib/python3.6/site-packages/pyeapi/client.py", line 743, in run_commands
+    response = self._connection.execute(commands, encoding, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/pyeapi/eapilib.py", line 550, in execute
+    response = self.send(request)
+  File "/usr/local/lib/python3.6/site-packages/pyeapi/eapilib.py", line 451, in send
+    response_content))
+pyeapi.eapilib.ConnectionError: Unauthorized. b'Unable to authenticate user: Bad username/password combination'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.6/site-packages/nornir/plugins/tasks/networking/napalm_get.py", line 49, in napalm_get
+    device = task.host.get_connection("napalm", task.nornir.config)
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 302, in get_connection
+    extras=conn.extras,
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 352, in open_connection
+    configuration=configuration,
+  File "/usr/local/lib/python3.6/site-packages/nornir/plugins/connections/napalm.py", line 51, in open
+    connection.open()
+  File "/usr/local/lib/python3.6/site-packages/napalm/eos/eos.py", line 169, in open
+    raise ConnectionException(py23_compat.text_type(ce))
+napalm.base.exceptions.ConnectionException: Unauthorized. b'Unable to authenticate user: Bad username/password combination'
+
+2020-04-10 13:47:07,642 - nornir.core.task -    ERROR -      start() - Host 'ussclpdnwsaac37': task 'get_facts' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "gather_facts.py", line 46, in get_facts
+    name=f"Gathering the following facts: {getter}", task=napalm_get, getters=getter
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function napalm_get at 0x7fef0497e378> (failed)
+
+
+2020-04-10 14:09:06,392 -  nornir.core -     INFO -        run() - Running task 'get_facts' with args {'t': Progress:   0%|                                                                                                                                                                                                   | 0/1 [00:00<?, ?it/s], 'getter': 'get_facts'} on 1 hosts
+2020-04-10 14:09:08,353 - nornir.core.task -    ERROR -      start() - Host 'ussclpdnwsaac37': task 'Gathering the following facts: get_facts' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/napalm/eos/eos.py", line 164, in open
+    self.device.run_commands(["show clock"], encoding="text")
+  File "/usr/local/lib/python3.6/site-packages/pyeapi/client.py", line 743, in run_commands
+    response = self._connection.execute(commands, encoding, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/pyeapi/eapilib.py", line 550, in execute
+    response = self.send(request)
+  File "/usr/local/lib/python3.6/site-packages/pyeapi/eapilib.py", line 451, in send
+    response_content))
+pyeapi.eapilib.ConnectionError: Unauthorized. b'Unable to authenticate user: Bad username/password combination'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.6/site-packages/nornir/plugins/tasks/networking/napalm_get.py", line 49, in napalm_get
+    device = task.host.get_connection("napalm", task.nornir.config)
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 302, in get_connection
+    extras=conn.extras,
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 352, in open_connection
+    configuration=configuration,
+  File "/usr/local/lib/python3.6/site-packages/nornir/plugins/connections/napalm.py", line 51, in open
+    connection.open()
+  File "/usr/local/lib/python3.6/site-packages/napalm/eos/eos.py", line 169, in open
+    raise ConnectionException(py23_compat.text_type(ce))
+napalm.base.exceptions.ConnectionException: Unauthorized. b'Unable to authenticate user: Bad username/password combination'
+
+2020-04-10 14:09:08,358 - nornir.core.task -    ERROR -      start() - Host 'ussclpdnwsaac37': task 'get_facts' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "gather_facts.py", line 46, in get_facts
+    name=f"Gathering the following facts: {getter}", task=napalm_get, getters=getter
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function napalm_get at 0x7f361d878378> (failed)
+
+
+2020-04-10 14:10:30,088 -  nornir.core -     INFO -        run() - Running task 'get_facts' with args {'t': Progress:   0%|                                                                                                                                                                                                   | 0/1 [00:00<?, ?it/s], 'getter': 'get_facts'} on 1 hosts
+2020-04-10 14:10:32,032 - nornir.core.task -    ERROR -      start() - Host 'ussclpdnwsaac37': task 'Gathering the following facts: get_facts' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/napalm/eos/eos.py", line 164, in open
+    self.device.run_commands(["show clock"], encoding="text")
+  File "/usr/local/lib/python3.6/site-packages/pyeapi/client.py", line 743, in run_commands
+    response = self._connection.execute(commands, encoding, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/pyeapi/eapilib.py", line 550, in execute
+    response = self.send(request)
+  File "/usr/local/lib/python3.6/site-packages/pyeapi/eapilib.py", line 451, in send
+    response_content))
+pyeapi.eapilib.ConnectionError: Unauthorized. b'Unable to authenticate user: Bad username/password combination'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.6/site-packages/nornir/plugins/tasks/networking/napalm_get.py", line 49, in napalm_get
+    device = task.host.get_connection("napalm", task.nornir.config)
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 302, in get_connection
+    extras=conn.extras,
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/inventory.py", line 352, in open_connection
+    configuration=configuration,
+  File "/usr/local/lib/python3.6/site-packages/nornir/plugins/connections/napalm.py", line 51, in open
+    connection.open()
+  File "/usr/local/lib/python3.6/site-packages/napalm/eos/eos.py", line 169, in open
+    raise ConnectionException(py23_compat.text_type(ce))
+napalm.base.exceptions.ConnectionException: Unauthorized. b'Unable to authenticate user: Bad username/password combination'
+
+2020-04-10 14:10:32,037 - nornir.core.task -    ERROR -      start() - Host 'ussclpdnwsaac37': task 'get_facts' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "gather_facts.py", line 46, in get_facts
+    name=f"Gathering the following facts: {getter}", task=napalm_get, getters=getter
+  File "/usr/local/lib/python3.6/site-packages/nornir/core/task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function napalm_get at 0x7f6f224e0378> (failed)
+
+
